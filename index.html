@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Electricity Bill Calculator - 2023</title>
+    <title>Electricity Bill Calculator</title>
     <!-- Add Bootstrap 5 CSS link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -23,8 +23,8 @@
           Sri Lanka
         </h1>
         <p class="text-center">
-          Calculate your new monthly electricity bill after government's new
-          taxation (02/2023)
+          Calculate your new month electricty bill after goverments new taxetion
+          (02/2023)
         </p>
         <form onsubmit="return false;">
           <div class="mb-3">
@@ -38,7 +38,9 @@
               class="form-control"
               required
             />
+            <p style="font-size: 14px;" class="float-end text-white-50">**Units consumed during a period of 30 days.</p>
           </div>
+          <br>
           <div class="text-center">
             <button
               type="button"
@@ -53,10 +55,7 @@
       </div>
     </div>
 
-    <footer
-      id="sticky-footer"
-      class="flex-shrink-0 py-4 bg-black text-white-50"
-    >
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-black text-white-50">
       <div class="container text-center">
         <small>Developed by T. Hettiarachchi</small>
       </div>
@@ -75,108 +74,32 @@
           }
         });
 
-      (function (_0x27100d, _0x19f835) {
-        const _0x31b141 = _0x1c98,
-          _0x17cb20 = _0x27100d();
-        while (!![]) {
-          try {
-            const _0x1c353c =
-              (parseInt(_0x31b141(0x1e5)) / 0x1) *
-                (parseInt(_0x31b141(0x1e2)) / 0x2) +
-              parseInt(_0x31b141(0x1e0)) / 0x3 +
-              parseInt(_0x31b141(0x1df)) / 0x4 +
-              parseInt(_0x31b141(0x1de)) / 0x5 +
-              -parseInt(_0x31b141(0x1e7)) / 0x6 +
-              (-parseInt(_0x31b141(0x1e9)) / 0x7) *
-                (-parseInt(_0x31b141(0x1e8)) / 0x8) +
-              (parseInt(_0x31b141(0x1ec)) / 0x9) *
-                (-parseInt(_0x31b141(0x1ea)) / 0xa);
-            if (_0x1c353c === _0x19f835) break;
-            else _0x17cb20["push"](_0x17cb20["shift"]());
-          } catch (_0x4f1f75) {
-            _0x17cb20["push"](_0x17cb20["shift"]());
-          }
-        }
-      })(_0x552c, 0x6353b);
       function calculateBill() {
-        const _0x50722b = _0x1c98,
-          _0x288d7d = Number(
-            document[_0x50722b(0x1e1)]("units")[_0x50722b(0x1e6)]
-          );
-        let _0x39b2ff = 0x0;
-        if (_0x288d7d <= 0x1e) _0x39b2ff = _0x288d7d * 0x1e + 0x190;
-        else {
-          if (_0x288d7d <= 0x3c)
-            _0x39b2ff = 0x1e * 0x1e + (_0x288d7d - 0x1e) * 0x25 + 0x226;
-          else {
-            if (_0x288d7d <= 0x5a)
-              _0x39b2ff =
-                0x1e * 0x1e + 0x1e * 0x25 + (_0x288d7d - 0x3c) * 0x2a + 0x28a;
-            else {
-              if (_0x288d7d <= 0x78)
-                _0x39b2ff =
-                  0x1e * 0x1e +
-                  0x1e * 0x25 +
-                  0x1e * 0x2a +
-                  (_0x288d7d - 0x5a) * 0x32 +
-                  0x5dc;
-              else
-                _0x288d7d <= 0xb4
-                  ? (_0x39b2ff =
-                      0x1e * 0x1e +
-                      0x1e * 0x25 +
-                      0x1e * 0x2a +
-                      0x1e * 0x32 +
-                      (_0x288d7d - 0x78) * 0x32 +
-                      0x5dc)
-                  : (_0x39b2ff =
-                      0x1e * 0x1e +
-                      0x1e * 0x25 +
-                      0x1e * 0x2a +
-                      0x1e * 0x32 +
-                      0x3c * 0x32 +
-                      0x7d0 +
-                      (_0x288d7d - 0xb4) * 0x4b);
-            }
-          }
+        const units = Number(document.getElementById("units").value);
+        let amount = 0;
+
+        if (units <= 30) {
+          amount = units * 30 + 400;
+        } else if (units <= 60) {
+          amount = 30 * 30 + (units - 30) * 37 + 550;
+        } else if (units <= 90) {
+          amount = 60 * 42 + (units - 60) * 42 + 650;
+        } else if (units <= 120) {
+          amount = 90 * 42 + (units - 90) * 50 + 1500;
+        } else if (units <= 180) {
+          amount =
+            90 * 42 + 30 * 50 + (units - 120) * 50 + 1500;
+        } else {
+          amount =
+            90 * 42 +
+            90 * 50 +
+            2000 +
+            (units - 180) * 75;
         }
-        document[_0x50722b(0x1e1)](_0x50722b(0x1e3))[_0x50722b(0x1dd)] =
-          _0x50722b(0x1eb) + _0x39b2ff[_0x50722b(0x1e4)](0x2);
-      }
-      function _0x1c98(_0x1565f7, _0x2f7e9f) {
-        const _0x552cc8 = _0x552c();
-        return (
-          (_0x1c98 = function (_0x1c9871, _0x2d18f0) {
-            _0x1c9871 = _0x1c9871 - 0x1dd;
-            let _0x28526d = _0x552cc8[_0x1c9871];
-            return _0x28526d;
-          }),
-          _0x1c98(_0x1565f7, _0x2f7e9f)
-        );
-      }
-      function _0x552c() {
-        const _0x3402a3 = [
-          "127017WYxdcd",
-          "innerHTML",
-          "190460gAjyts",
-          "3220280sblkRz",
-          "1522968PyMTlv",
-          "getElementById",
-          "2vyVUzC",
-          "result",
-          "toFixed",
-          "619105RQgkxR",
-          "value",
-          "1343862wgtMTq",
-          "136ZLAIET",
-          "672gukYtM",
-          "950IcPTph",
-          "Your\x20bill\x20amount\x20is\x20Rs.\x20",
-        ];
-        _0x552c = function () {
-          return _0x3402a3;
-        };
-        return _0x552c();
+
+        document.getElementById(
+          "result"
+        ).innerHTML = `Your bill amount is Rs. ${amount.toFixed(2)}`;
       }
     </script>
   </body>
