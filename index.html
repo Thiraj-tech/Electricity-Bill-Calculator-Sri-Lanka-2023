@@ -38,9 +38,12 @@
               class="form-control"
               required
             />
-            <p style="font-size: 14px;" class="float-end text-white-50">**Units consumed during a period of 30 days.</p>
+            <p style="font-size: 14px" class="text-white-50">
+              *2.5% SSCL included <br />
+              **Units consumed during a period of 30 days.
+            </p>
           </div>
-          <br>
+          <br />
           <div class="text-center">
             <button
               type="button"
@@ -55,7 +58,10 @@
       </div>
     </div>
 
-    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-black text-white-50">
+    <footer
+      id="sticky-footer"
+      class="flex-shrink-0 py-4 bg-black text-white-50"
+    >
       <div class="container text-center">
         <small>Developed by T. Hettiarachchi</small>
       </div>
@@ -87,19 +93,15 @@
         } else if (units <= 120) {
           amount = 90 * 42 + (units - 90) * 50 + 1500;
         } else if (units <= 180) {
-          amount =
-            90 * 42 + 30 * 50 + (units - 120) * 50 + 1500;
+          amount = 90 * 42 + 30 * 50 + (units - 120) * 50 + 1500;
         } else {
-          amount =
-            90 * 42 +
-            90 * 50 +
-            2000 +
-            (units - 180) * 75;
+          amount = 90 * 42 + 90 * 50 + 2000 + (units - 180) * 75;
         }
 
+        const newAmount = amount * 1.025; // Add 2.5% to the original amount
         document.getElementById(
           "result"
-        ).innerHTML = `Your bill amount is Rs. ${amount.toFixed(2)}`;
+        ).innerHTML = `Your bill amount is Rs. ${newAmount.toFixed(2)}`;
       }
     </script>
   </body>
